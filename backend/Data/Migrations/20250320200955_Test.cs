@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Test1 : Migration
+    public partial class Test : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,7 +17,8 @@ namespace Data.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Login = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Passward = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Passward = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Role = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

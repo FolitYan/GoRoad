@@ -17,7 +17,8 @@ namespace Data.Repositories
             {
                 Id = id,
                 Login = login,
-                Passward = password
+                Passward = password,
+                Role = false
             };
             await _context.AddAsync(account);
             await _context.SaveChangesAsync();

@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-//import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Home';
+import React from 'react';
+//import { BrowserRouter, Routes, Route ,useNavigate} from "react-router-dom";
 import Registration from './Registration';
+//import Post from './Post';
 
 const App = () => {
- 
-  return (
-  <Registration />
+
+  return ( <div>
+    <h2>Home Page</h2>
+    <Registration />
+    </div> 
   );
 };
 

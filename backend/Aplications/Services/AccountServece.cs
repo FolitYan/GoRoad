@@ -11,20 +11,20 @@ namespace Aplications.Services
             _accountRepository = accountRepository;
         }
 
-        public string Registration(Guid id, string login, string password)
+        public (string,bool) Registration(Guid id, string login, string password)
         {
             var rez = _accountRepository.FindByLogin(login);
             if (rez.Count()>0)
             {
-                return "Пользователь с таким логином уже есть";
+                return ("Пользователь с таким логином уже есть",false);
             }
             var (account, error ) = Account.Create(id, login, password);
             if (error.Count() > 0)
             {
-                return error;
+                return (error,false);
             }
             _accountRepository.Add(id, login, account.Passward); 
-            return "зарегистрирован";
+            return ("", true);
         }
     }
 }

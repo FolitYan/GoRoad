@@ -1,4 +1,6 @@
-﻿namespace Data.Entietes
+﻿using System.Security.Principal;
+
+namespace Data.Entietes
 {
     public class AccountEntity
     {
@@ -6,5 +8,6 @@
         public string Login { get; set; } = string.Empty;
         public string Passward { get; set; } = string.Empty;
         public List<PostEntity>? Posts { get; set; }
+        public bool Role { get; set; } = false;
     }
 }

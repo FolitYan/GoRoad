@@ -36,6 +36,9 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Role")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("Accounts");

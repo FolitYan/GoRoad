@@ -16,9 +16,14 @@ public class AccountRegistrationController : ControllerBase
     }
 
     [HttpPost]
-    public string Register([FromBody] AccountRequest request)
+    public IActionResult Register([FromBody] AccountRequest request)
     {
-        return _accountServece.Registration(Guid.NewGuid(), request.Login, request.Password);
+        var (msg,rezoult) = _accountServece.Registration(Guid.NewGuid(), request.Login, request.Password);
+        return Ok(new
+        {
+            message = msg,
+            success = rezoult
+        });
     }
 
 

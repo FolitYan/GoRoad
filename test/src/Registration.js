@@ -3,13 +3,13 @@ import "./style/Authentication.css"
 
 export default function Registration(){
 
-  const [page, setPage] = useState("Avtorization")
+
+  const [page, setPage] = useState("Autentification")
 
   const [accountData, setAccountData] = useState({
     login:"",
     password:"",
   })
-
 
   const handleSetAccount = (dataTitle, data) =>{
     setAccountData(
@@ -20,23 +20,32 @@ export default function Registration(){
     );
   }
 
-  
-  const sendDataToServer = async (data) => {
+  const handleSetPage = (e) =>{
+    e.preventDefault();
+    if(page === "Autentification"){
+      setPage("Registration");
+    }else{
+      setPage("Autentification")
+    }
+  }
+
+  const sendDataToServer = async (e,data) => {
+    e.preventDefault();
     try {
       const response = await fetch('https://localhost:7190/AccountRegistration', {
-        method: 'POST', // HTTP метод (POST, GET, PUT, DELETE)
+        method: 'POST', 
         headers: {
-          'Content-Type': 'application/json', // Указываем, что данные в формате JSON
+          'Content-Type': 'application/json', 
         },
-        body: JSON.stringify(data), // Преобразуем объект в JSON-строку
+        body: JSON.stringify(data), 
       });
-  
-      if (!response.ok) {
-        throw new Error(`Ошибка: ${response.status}`); // Проверяем успешность запроса
-      }
-  
-      const result = await response.json(); // Обрабатываем ответ
-      console.log('Ответ сервера:', result);
+      setAccountData({
+        login: "",
+        password: "",
+      });
+      const result = await response.json(); 
+      console.log(result);
+
     } catch (error) {
       console.error('Ошибка при отправке данных:', error);
     }
@@ -46,16 +55,18 @@ export default function Registration(){
         <div className="AutinfBody">
         <div className="wrapper">
      <form onSubmit={
-      (e)=>{e.preventDefault();
-        sendDataToServer(accountData);
-      }}>
-      <h2>Log In</h2>
+      (e)=>{sendDataToServer(e,accountData)}}>
+      <h2>
+      {page==="Autentification" && "Log In"}
+      {page==="Registration" && "Registration"}
+      </h2>
         <div className="input-field">
         <input 
         type="text" 
         required
-        name="accountData.login"
-        onChange={(e) => {handleSetAccount("login", e.target.value)}} 
+        name="login"
+        value={accountData.login}
+        onChange={(e) => {handleSetAccount(e.target.name, e.target.value)}} 
         />
         <label>Enter your login</label>
       </div>
@@ -63,16 +74,26 @@ export default function Registration(){
         <input 
         type="password" 
         required 
-        onChange={(e) => {handleSetAccount("password", e.target.value)}} 
-        name="accountData.password"
-         />
+        value={accountData.password}
+        onChange={(e) => {handleSetAccount(e.target.name, e.target.value)}} 
+        name="password"
+        />
 
         <label>Enter your password</label>
       </div>
       <button 
-      type="submit">Log In</button>
+      type="submit">
+        {page==="Autentification" && "Log In"}
+        {page==="Registration" && "Registration"}
+      </button>
       <div className="change-page">
-        <p>Don't have an account? <a href="#">Register</a></p>
+        <p>
+        {page==="Autentification" && "Don't have an account? "}
+        {page==="Registration" && "Already have an account?"}
+          <span onClick={(e) => handleSetPage(e)}>
+          {page==="Autentification" && "Registration"}
+          {page==="Registration" && "Log In"}
+            </span></p>
       </div>
     </form>
   </div>

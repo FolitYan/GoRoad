@@ -177,7 +177,6 @@ D:\GoRoad\backend\WebAPI\bin\Debug\net8.0\Data.dll
 D:\GoRoad\backend\WebAPI\bin\Debug\net8.0\Data.pdb
 D:\GoRoad\backend\WebAPI\bin\Debug\net8.0\Aplications.dll
 D:\GoRoad\backend\WebAPI\bin\Debug\net8.0\Aplications.pdb
-D:\GoRoad\backend\WebAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\backend\WebAPI\bin\Debug\net8.0\appsettings.Development.json
 D:\backend\WebAPI\bin\Debug\net8.0\appsettings.json
 D:\backend\WebAPI\bin\Debug\net8.0\WebAPI.staticwebassets.endpoints.json
@@ -357,3 +356,5 @@ D:\backend\WebAPI\obj\Debug\net8.0\WebAPI.pdb
 D:\backend\WebAPI\obj\Debug\net8.0\WebAPI.genruntimeconfig.cache
 D:\backend\WebAPI\obj\Debug\net8.0\ref\WebAPI.dll
 D:\backend\WebAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\GoRoad\backend\WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\GoRoad\backend\WebAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

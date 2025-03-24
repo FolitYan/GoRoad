@@ -9,3 +9,4 @@ namespace Data.Repositories
         List<Account> FindByPassword(string paswword);
     }
 }
+

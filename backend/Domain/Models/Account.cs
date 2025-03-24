@@ -15,6 +15,7 @@
         public string Login { get; set; } = string.Empty;
         public string Passward { get; set; } = string.Empty;
         public List<Post>? Posts { get; set; }
+        public bool Role { get; set; } = false;
 
         public static (Account, string) Create(Guid id, string login, string passward)
         {
