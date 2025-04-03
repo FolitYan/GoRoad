@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "AccountAuthenticationController",
+    "Method": "AccountAuthentication",
+    "RelativePath": "AccountAuthentication",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Aplications.Contracts.AccountRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AccountRegistrationController",
     "Method": "Register",
     "RelativePath": "AccountRegistration",

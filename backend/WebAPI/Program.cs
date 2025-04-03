@@ -10,9 +10,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IAccountRepository, AccountRepository>();
-builder.Services.AddScoped<IAccountServece, AccountServece>();
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>
@@ -23,8 +20,14 @@ builder.Services.AddCors(options =>
     });
 });
 
+
 builder.Services.AddDbContext<Context>(options =>
     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<IAccountServece, AccountServece>();
+
 
 var app = builder.Build();
 

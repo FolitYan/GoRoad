@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 [Route("[controller]")]
 public class AccountRegistrationController : ControllerBase
 {
-    private IAccountServece _accountServece;
+    private readonly IAccountServece _accountServece;
 
     public AccountRegistrationController(IAccountServece accountServece)
     {
@@ -18,13 +18,11 @@ public class AccountRegistrationController : ControllerBase
     [HttpPost]
     public IActionResult Register([FromBody] AccountRequest request)
     {
-        var (msg,rezoult) = _accountServece.Registration(Guid.NewGuid(), request.Login, request.Password);
+        var (msg,resoult) = _accountServece.Registration(Guid.NewGuid(), request.Login, request.Password);
         return Ok(new
         {
             message = msg,
-            success = rezoult
+            success = resoult
         });
     }
-
-
 }

@@ -1,10 +1,7 @@
 import { useState } from "react"
 import "./style/Authentication.css"
 
-export default function Registration(){
-
-
-  const [page, setPage] = useState("Autentification")
+export default function Authentication(){
 
   const [accountData, setAccountData] = useState({
     login:"",
@@ -20,14 +17,14 @@ export default function Registration(){
     );
   }
 
-  const handleSetPage = (e) =>{
+  /*const handleSetPage = (e) =>{
     e.preventDefault();
     if(page === "Autentification"){
       setPage("Registration");
     }else{
       setPage("Autentification")
     }
-  }
+  }*/
 
   const sendDataToServer = async (e,data) => {
     e.preventDefault();
@@ -56,10 +53,7 @@ export default function Registration(){
         <div className="wrapper">
      <form onSubmit={
       (e)=>{sendDataToServer(e,accountData)}}>
-      <h2>
-      {page==="Autentification" && "Log In"}
-      {page==="Registration" && "Registration"}
-      </h2>
+      <h2>Вход</h2>
         <div className="input-field">
         <input 
         type="text" 
@@ -68,7 +62,7 @@ export default function Registration(){
         value={accountData.login}
         onChange={(e) => {handleSetAccount(e.target.name, e.target.value)}} 
         />
-        <label>Enter your login</label>
+        <label>Введите логин</label>
       </div>
       <div className="input-field">
         <input 
@@ -79,21 +73,12 @@ export default function Registration(){
         name="password"
         />
 
-        <label>Enter your password</label>
+        <label>Введите пароль</label>
       </div>
       <button 
-      type="submit">
-        {page==="Autentification" && "Log In"}
-        {page==="Registration" && "Registration"}
-      </button>
+      type="submit">Подтвердить</button>
       <div className="change-page">
-        <p>
-        {page==="Autentification" && "Don't have an account? "}
-        {page==="Registration" && "Already have an account?"}
-          <span onClick={(e) => handleSetPage(e)}>
-          {page==="Autentification" && "Registration"}
-          {page==="Registration" && "Log In"}
-            </span></p>
+        <p>Нет аккаунта? <span /*</p>onClick={(e) => handleSetPage(e)}*/>Зарегистироваться</span></p>
       </div>
     </form>
   </div>

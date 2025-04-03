@@ -1,32 +1,36 @@
+
+
 .post-body {
     display: flex;
     flex-direction: column; /* Указываем расположение элементов по вертикали */
     /*justify-content: center;  Выравниваем элементы по вертикали (вверх контейнера) */
     height: 80vh;
     width: 70vh;
-    background-color: aquamarine;
-    border-radius: 20px;
-    padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-
-.title-content{
-    background-color: rgb(155, 127, 255);
-
+    background-color:#ffffff;
+    padding: 25px;   
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
 }
 
 .img-content{
-    background-color: rgb(56, 123, 61);
     height: 60%;
+    padding: 10 0 10 0;
+    overflow: hidden;
+}
+
+.img-content img {
+    width: 100%; /* Подстраивает ширину изображения под контейнер */
+    height: 100%; /* Подстраивает высоту изображения под контейнер */
+    object-fit: cover; /* Картинка заполняет контейнер, сохраняя пропорции */
 }
 
 .content{
-    background-color: rgb(123, 56, 56);
+    height: 20%;
+    padding: 10px;
 }
 
 .button-content{
-    background-color: rgb(123, 56, 103);
     margin: 3%;
 }
+

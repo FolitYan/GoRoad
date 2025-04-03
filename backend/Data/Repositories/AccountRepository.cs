@@ -36,10 +36,10 @@ namespace Data.Repositories
                  .ToList();
         }
 
-        public List<Account> FindByPassword(string paswword)
+        public List<Account> FindAccount(string login, string paswword)
         {
             return _context.Accounts
-                 .Where(x => x.Login == paswword)
+                 .Where(x => x.Passward == paswword && x.Login == login)
                  .Select(a => new Account
                  {
                      Login = a.Login,

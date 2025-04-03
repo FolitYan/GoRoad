@@ -1,0 +1,19 @@
+.user {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: 10px;
+  }
+  
+  .user img {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+  }
+  .user-info h2 {
+    margin: 0;
+  }
+  .user-info small {
+    color: #545d7a;
+  }
+  

@@ -1,4 +1,6 @@
-﻿namespace Domain.Models
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Domain.Models
 {
     public class Post
     {
@@ -9,4 +11,5 @@
         public Guid accountId { get; set; }
 
     }
+
 }
