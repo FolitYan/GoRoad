@@ -33,3 +33,5 @@ D:\backend\Aplications\obj\Debug\net8.0\Aplications.dll
 D:\backend\Aplications\obj\Debug\net8.0\refint\Aplications.dll
 D:\backend\Aplications\obj\Debug\net8.0\Aplications.pdb
 D:\backend\Aplications\obj\Debug\net8.0\ref\Aplications.dll
+D:\GoRoad\backend\Aplications\bin\Debug\net8.0\Infrastructure.dll
+D:\GoRoad\backend\Aplications\bin\Debug\net8.0\Infrastructure.pdb

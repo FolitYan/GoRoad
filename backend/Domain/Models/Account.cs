@@ -11,7 +11,7 @@
         }
         public Account() { }
 
-        Guid Id { get; set; }
+        public Guid Id { get; set; }
         public string Login { get; set; } = string.Empty;
         public string Passward { get; set; } = string.Empty;
         public List<Post>? Posts { get; set; }

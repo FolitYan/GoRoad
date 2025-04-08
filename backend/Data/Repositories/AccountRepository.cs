@@ -47,5 +47,16 @@ namespace Data.Repositories
                  })
                  .ToList();
         }
+
+        public List<Account> ReturnAll()
+        {
+            return _context.Accounts
+                .Select(a => new Account
+                {
+                    Login = a.Login,
+                    Passward = a.Passward
+                })
+                 .ToList();
+        }
     }
 }

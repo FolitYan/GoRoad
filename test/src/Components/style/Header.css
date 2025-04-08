@@ -1,0 +1,81 @@
+
+header {
+  background-color: #566f7e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 12px 16px; 
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.logo {
+  font-size: 1.25rem; 
+  font-weight: bold;  
+  color: #FFF2C2; 
+}
+
+.camera-icon {
+  color: #FFF2C2; 
+  width: 24px;
+  height: 24px;
+}
+
+
+.navigation {
+  display: none;
+  justify-content: center;
+  gap: 24px; 
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    display: flex;
+    flex: 1; 
+  }
+}
+
+.nav-link {
+  font-size: 1rem;   
+  color: #FFF2C2;  
+  text-decoration: none; 
+  transition: color 0.3s ease; 
+}
+
+.nav-link:hover {
+  color: #000000; 
+}
+
+
+.profile-container {
+  flex-shrink: 0; 
+  display: flex;
+  align-items: center;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #FFF2C2;
+  transition: color 0.3s ease;
+}
+
+.profile-link:hover {
+  color: #000000; 
+}
+
+.user-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}

@@ -7,6 +7,9 @@ namespace Domain.Models
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
+        public string Photo {  get; set; } = string.Empty;
+        public int Like { get; set; } = 0;
+        public string Geo {  get; set; } = string.Empty;
         public Account? account { get; set; }
         public Guid accountId { get; set; }
 

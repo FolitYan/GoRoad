@@ -7,6 +7,7 @@ namespace Data.Repositories
         Task Add(Guid id, string login, string password);
         List<Account> FindByLogin(string login);
         List<Account> FindAccount(string login, string paswword);
+        public List<Account> ReturnAll();
     }
 }
 

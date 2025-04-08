@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/AccountAuthentication": {
+    "/Account/authorization": {
       "post": {
         "tags": [
-          "AccountAuthentication"
+          "Account"
         ],
         "requestBody": {
           "content": {
@@ -36,10 +36,84 @@
         }
       }
     },
-    "/AccountRegistration": {
+    "/Account/registration": {
       "post": {
         "tags": [
-          "AccountRegistration"
+          "Account"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Account/getAllAccounts": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Post/authorization": {
+      "post": {
+        "tags": [
+          "Post"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Post/registration": {
+      "post": {
+        "tags": [
+          "Post"
         ],
         "requestBody": {
           "content": {
