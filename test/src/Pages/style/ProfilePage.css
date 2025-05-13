@@ -1,0 +1,364 @@
+.profile-page {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  
+  .profile-banner {
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url('../Components/day_1.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+  }
+  
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .profile-avatar-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .profile-user-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    margin: 0px 30px;
+  }
+  
+  .profile-info {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+  }
+  
+  .profile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .username {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .edit-profile-button, .follow-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  
+  .edit-profile-button {
+    background: #f0f0f0;
+    color: #333;
+  }
+  
+  .follow-button {
+    background: #FF6B6B;
+    color: white;
+  }
+  
+  .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+  
+  .profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-count {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .stat-label {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .profile-details {
+    text-align: center;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .user-bio {
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* Profile Tabs */
+  .profile-tabs {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tab-button {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    color: #666;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  
+  .tab-button.active {
+    color: #FF6B6B;
+    border-bottom-color: #FF6B6B;
+  }
+  
+  /* Grid Layouts */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+  
+  /* Post Item */
+  .post-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+  }
+  
+  .post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .post-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px;
+  }
+  
+  .post-item:hover .post-overlay {
+    opacity: 1;
+  }
+  
+  .post-info {
+    color: white;
+  }
+  
+  .location-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .post-stats {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .stat {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+  
+  .wishlist-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+  
+  .icon.filled {
+    color: #FF6B6B;
+    fill: #FF6B6B;
+  }
+  
+  /* Empty States */
+  .empty-state {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .empty-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 20px;
+    color: #ddd;
+  }
+  
+  .empty-text {
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .empty-subtext {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .create-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #FF6B6B;
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  
+  .create-button:hover {
+    background: #e55c5c;
+  }
+  
+  /* Responsive */
+  @media (min-width: 640px) {
+    .profile-header {
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: -80px;
+    }
+  
+    .avatar-container {
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+  
+    .user-avatar {
+      width: 160px;
+      height: 160px;
+    }
+  
+    .profile-info {
+      text-align: left;
+      padding: 30px;
+    }
+  
+    .profile-actions {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .username {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  
+    .profile-stats {
+      justify-content: flex-start;
+      gap: 30px;
+    }
+  }
+
+  /* Profile Tabs */
+.profile-tabs {
+  display: flex;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  color: #666;
+  font-weight: 500;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  color:#FF6B6B;
+  font-weight: 600;
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #FF6B6B;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.profile-posts-container{
+    max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

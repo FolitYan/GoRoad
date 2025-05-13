@@ -1,4 +1,5 @@
-﻿using Data.Repositories;
+﻿using Data.Entietes;
+using Data.Repositories;
 using Domain.Models;
 using Infrastructure;
 
@@ -30,23 +31,23 @@ namespace Aplications.Services
             return ("", true);
         }
 
-        public (string, bool) Authentication(string login, string password)
+        public (string, bool, List<Account>) Authentication(string login, string password)
         {
             var LoginRes = _accountRepository.FindByLogin(login).ToList();
             if (!LoginRes.Any())
             {
-                return ("Пользователя с таким логином нет", false);
+                return ("Пользователя с таким логином нет", false, new List<Account>());
             }
             if (LoginRes.Count > 1)
             {
-                return ("Найдено несколько пользователей с одинаковым логином", false);
+                return ("Найдено несколько пользователей с одинаковым логином", false, new List<Account>());
             }
-            if (BCrypt.Net.BCrypt.Verify(password, LoginRes[0].Passward))
+            if (BCrypt.Net.BCrypt.Verify(password, LoginRes[0].Password))
             {
                 var token = _jwtProvider.GenerateToken(LoginRes[0].Id);
-                return (token, true);
+                return (token, true, LoginRes); 
             }
-            return ("Неправильный пароль", false);
+            return ("Неправильный пароль", false, new List<Account>());
 
         }
 

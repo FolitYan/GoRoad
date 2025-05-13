@@ -1,6 +1,4 @@
-﻿using Domain.Models;
-
-namespace Infrastructure
+﻿namespace Infrastructure
 {
     public interface IJWTProvider
     {

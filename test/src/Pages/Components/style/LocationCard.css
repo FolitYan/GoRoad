@@ -1,0 +1,217 @@
+/* Основные стили карточки */
+.location-card {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: white;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .location-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Контейнер с изображением */
+  .image-wrapper {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+  }
+  
+  .location-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .location-card:hover .location-image {
+    transform: scale(1.05);
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+  }
+  
+  /* Декоративные элементы */
+  .decorative-icon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    padding: 8px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  
+  .location-card:hover .decorative-icon {
+    opacity: 1;
+  }
+  
+  .icon-compass {
+    width: 20px;
+    height: 20px;
+    color: white;
+  }
+  
+  /* Основная информация */
+  .location-main-info {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    color: white;
+  }
+  
+  .location-main-info h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .location-meta {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+  
+  .icon-pin {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    color: #FF6B6B;
+  }
+  
+  /* Рейтинг */
+  .rating-block {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: white;
+    border-radius: 20px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon-star {
+    width: 16px;
+    height: 16px;
+    color: #F59E0B;
+    margin-right: 4px;
+  }
+  
+  .rating-value {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .rating-count {
+    font-size: 0.75rem;
+    color: #6B7280;
+    margin-left: 2px;
+  }
+  
+  /* Кнопка избранного */
+  .wishlist-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  
+  .location-card:hover .wishlist-btn {
+    opacity: 1;
+  }
+  
+  .wishlist-btn:hover {
+    background: white;
+    transform: scale(1.1);
+  }
+  
+  .wishlist-btn.active {
+    opacity: 1;
+  }
+  
+  .icon-bookmark {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .wishlist-btn.active .icon-bookmark {
+    fill: #FF6B6B;
+    color: #FF6B6B;
+  }
+  
+  /* Подвал карточки */
+  .location-footer {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .location-type {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .location-type.beach {
+    background: #FEF3C7;
+    color: #92400E;
+  }
+  
+  .location-type.mountain {
+    background: #D1FAE5;
+    color: #065F46;
+  }
+  
+  .location-type.landmark {
+    background: #DBEAFE;
+    color: #1E40AF;
+  }
+  
+  .type-icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+  }
+  
+  .view-details {
+    font-size: 0.75rem;
+    color: #FF6B6B;
+    font-weight: 500;
+    transition: transform 0.3s;
+  }
+  
+  .location-card:hover .view-details {
+    transform: translateX(4px);
+  }

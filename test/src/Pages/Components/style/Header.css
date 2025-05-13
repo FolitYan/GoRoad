@@ -1,0 +1,148 @@
+.header-container {
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-symbol {
+  width: 25px;
+  height: 25px;
+  color: #FF6B6B;
+  margin-left: 10px;
+}
+
+.brand-text {
+  font-size: 17px;
+  font-weight: 700;
+  color: #FF6B6B;
+}
+
+/* Поиск */
+.search-wrapper {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 600px;
+  margin: 0 16px;
+  animation: fadeIn 0.3s;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-field {
+  width: 100%;
+  max-width: 100%;
+  padding: 8px 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.search-field:focus {
+  border-color: #FF6B6B;
+  box-shadow: 0 0 0 2px rgba(255,107,107,0.2);
+}
+
+.search-icon-placeholder {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  color: #9ca3af;
+}
+
+.search-close-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Навигация */
+.menu-container {
+  display: none;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .menu-container {
+    display: flex;
+  }
+}
+
+.menu-link {
+  color: #6b7280;
+  transition: color 0.2s;
+  display: flex;
+}
+
+.menu-link:hover,
+.menu-link.active {
+  color: #FF6B6B;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Кнопка выхода */
+.exit-btn {
+  color: #6b7280;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.exit-btn:hover {
+  color: #FF6B6B;
+}
+
+/* Аватар */
+.profile-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,6 +1,7 @@
 ﻿using Aplications.Contracts;
 using Aplications.Services;
 using Data;
+using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,40 +9,26 @@ using Microsoft.AspNetCore.Mvc;
 [Route("[controller]")]
 public class PostController : ControllerBase
 {
-    private readonly IAccountService _accountServece;
+    private readonly IPostService _postServece;
 
-    public PostController(IAccountService accountServece)
+    public PostController(IPostService postServece)
     {
-        _accountServece = accountServece;
+        _postServece = postServece; 
     }
 
-    [HttpPost("authorization")]
-    public IActionResult AccountAuthorization([FromBody] AccountRequest request)
-    {
-        var (token, resoult) = _accountServece.Authentication(request.Login, request.Password);
-
-        HttpContext.Response.Cookies.Append("chocolate-cookie", token);
-
-        return Ok(new
-        {
-            token = token,
-            success = resoult
-        });
-    }
-
-
+    [HttpPost("create")]
     [Authorize]
-    //[AllowAnonymous]
-    [HttpPost("registration")]
-    public IActionResult Registration([FromBody] AccountRequest request)
+    public IActionResult CreatePost([FromBody] PostRequestAdd post)
     {
-        var (msg, resoult) = _accountServece.Registration(Guid.NewGuid(), request.Login, request.Password);
+        var rez = _postServece.AddNewPost(post.Title, post.Description, post.Photo, post.Geo, post.accountId);
+        return Ok(rez);
+    }
 
-        return Ok(new
-        {
-            message = msg,
-            success = resoult
-        });
+    [HttpGet("getAll")]
+    public IActionResult GetAllPosts() 
+    {
+        var posts = _postServece.GetAllPosts();
+        return Ok(posts);
     }
 }
 

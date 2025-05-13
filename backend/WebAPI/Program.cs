@@ -19,11 +19,13 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>
     {
-        builder.AllowAnyOrigin()
+        builder.WithOrigins("http://localhost:3000") // Явно указываем разрешенный origin
                .AllowAnyHeader()
-               .AllowAnyMethod();
+               .AllowAnyMethod()
+               .AllowCredentials(); // Разрешаем учетные данные
     });
 });
+
 
 builder.Services.AddApiAuthentication(
     Options.Create(Configuration.GetSection(nameof(JWTOptions)).Get<JWTOptions>())
@@ -37,6 +39,9 @@ builder.Services.AddDbContext<Context>(options =>
 
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IPostRepository, PostRepository>();
+builder.Services.AddScoped<IPostService, PostService>();
+
 builder.Services.AddScoped<IJWTProvider, JWTProvider>();
 
 
@@ -49,11 +54,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseHttpsRedirection();
-app.UseAuthentication();
-app.UseAuthorization(); 
-app.MapControllers();
 app.UseCors("AllowAll");
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
 
 app.Run();

@@ -1,0 +1,268 @@
+.home-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Секция героя */
+.home-hero {
+  position: relative;
+  height: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.home-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+}
+
+.home-hero__content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+  max-width: 600px;
+}
+
+.home-hero__badge {
+  display: inline-block;
+  background-color: #FF6B6B;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.home-hero__title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.home-hero__description {
+  font-size: 18px;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.9);
+}
+
+.home-hero__buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.home-btn {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.home-btn--primary {
+  background-color: #FF6B6B;
+  color: white;
+}
+
+.home-btn--primary:hover {
+  background-color: #e55c5c;
+}
+
+.home-btn--secondary {
+  background-color: white;
+  color: #FF6B6B;
+}
+
+.home-btn--secondary:hover {
+  background-color: #f0f0f0;
+}
+
+.home-btn__icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+}
+
+/* Плавающие иконки */
+.home-hero__floating-icon {
+  position: absolute;
+  background-color: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 8px;
+  border-radius: 50%;
+  animation: float 4s ease-in-out infinite;
+}
+
+.home-hero__floating-icon--1 {
+  top: 25%;
+  right: 25%;
+}
+
+.home-hero__floating-icon--2 {
+  bottom: 25%;
+  right: 33%;
+  animation-delay: 1s;
+}
+
+/* Общие стили секций */
+.home-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Секция категорий */
+.home-categories {
+  background-color: white;
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.home-categories__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .home-categories__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.home-category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.home-category-card:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-5px);
+}
+
+.home-category-card__icon {
+  margin-bottom: 12px;
+  background-color: white;
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+/* Секция направлений */
+.home-destinations {
+  background-color: white;
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.home-destinations__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .home-destinations__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.home-destination-card {
+  position: relative;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.home-destination-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.home-destination-card:hover .home-destination-card__image {
+  transform: scale(1.05);
+}
+
+.home-destination-card__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+}
+
+.home-destination-card__info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.home-destination-card__location {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.home-destination-card__location-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 4px;
+  color: #FF6B6B;
+}
+
+/* Иконки */
+.home-icon--sun {
+  color: #F59E0B;
+}
+
+.home-icon--map {
+  color: #10B981;
+}
+
+.home-icon--compass {
+  color: #3B82F6;
+}
+
+.home-icon--briefcase {
+  color: #8B5CF6;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

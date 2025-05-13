@@ -79,7 +79,19 @@
         }
       }
     },
-    "/Post/authorization": {
+    "/Account/isAuthorize": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Post/create": {
       "post": {
         "tags": [
           "Post"
@@ -88,17 +100,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
+                "$ref": "#/components/schemas/PostRequestAdd"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
+                "$ref": "#/components/schemas/PostRequestAdd"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
+                "$ref": "#/components/schemas/PostRequestAdd"
               }
             }
           }
@@ -110,30 +122,11 @@
         }
       }
     },
-    "/Post/registration": {
-      "post": {
+    "/Post/getAll": {
+      "get": {
         "tags": [
           "Post"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AccountRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -154,6 +147,32 @@
           "password": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PostRequestAdd": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "photo": {
+            "type": "string",
+            "nullable": true
+          },
+          "geo": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountId": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false

@@ -1,0 +1,194 @@
+/* Основные стили */
+.settings-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  .settings-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Шапка */
+  .settings-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .settings-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .back-button {
+    margin-right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+  }
+  
+  .back-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .back-button .icon {
+    width: 24px;
+    height: 24px;
+    color: #333;
+  }
+  
+  /* Сообщение об успехе */
+  .success-message {
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+  
+  /* Карточка настроек */
+  .settings-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  /* Секция формы */
+  .settings-form {
+    padding: 24px;
+  }
+  
+  /* Аватар */
+  .avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .avatar-wrapper {
+    position: relative;
+  }
+  
+  .avatar-image {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e5e7eb;
+  }
+  
+  .avatar-edit-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .avatar-edit-button .icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Форма */
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #FF6B6B;
+    box-shadow: 0 0 0 2px rgba(255,107,107,0.2);
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  /* Поля с иконками */
+  .input-with-icon {
+    position: relative;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #9ca3af;
+  }
+  
+  .input-with-icon input {
+    padding-left: 40px;
+  }
+  
+  /* Кнопки */
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+  }
+  
+  .save-button {
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .save-button:hover {
+    background-color: #e55c5c;
+  }
+  
+  /* Секция смены пароля */
+  .password-section {
+    border-top: 1px solid #e5e7eb;
+    padding: 24px;
+  }
+  
+  .password-section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }

@@ -1,0 +1,317 @@
+/* src/components/LocationPage/LocationPage.css */
+.lp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.lp-not-found {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.lp-main-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+/* Hero Section */
+.lp-hero-section {
+  position: relative;
+  height: 16rem;
+}
+
+@media (min-width: 640px) {
+  .lp-hero-section {
+    height: 20rem;
+  }
+}
+
+.lp-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.lp-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  color: white;
+}
+
+.lp-location-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.lp-location-address {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.lp-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.lp-rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.lp-star-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #f59e0b;
+  margin-right: 0.5rem;
+}
+
+.lp-rate-btn {
+  margin-left: 1rem;
+  font-size: 0.875rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+.lp-rate-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Rating Form */
+.lp-rating-form {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.lp-star-rating {
+  display: flex;
+  margin-right: 0.5rem;
+}
+
+.lp-star-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.lp-star {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #d1d5db;
+}
+
+.lp-star.lp-filled {
+  color: #f59e0b;
+  fill: #f59e0b;
+}
+
+.lp-submit-btn {
+  padding: 0.25rem 0.75rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.lp-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lp-cancel-btn {
+  padding: 0.25rem 0.75rem;
+  background-color: #e5e7eb;
+  color: #374151;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+/* Location Info */
+.lp-info-section {
+  padding: 1.5rem;
+}
+
+.lp-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .lp-info-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.lp-info-item {
+  display: flex;
+  align-items: center;
+}
+
+.lp-info-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #3b82f6;
+  margin-right: 0.5rem;
+}
+
+.lp-info-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.lp-info-value {
+  font-weight: 500;
+}
+
+/* About Section */
+.lp-about-section {
+  margin-bottom: 1.5rem;
+}
+
+.lp-section-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.lp-section-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.lp-about-text {
+  color: #374151;
+}
+
+/* Posts Section */
+.lp-posts-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.lp-posts-container {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+/* Similar Locations */
+.lp-similar-section {
+  margin-top: 2rem;
+}
+
+.lp-similar-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.lp-similar-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .lp-similar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .lp-similar-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.lp-similar-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.lp-similar-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.lp-similar-img-container {
+  position: relative;
+  height: 10rem;
+}
+
+.lp-similar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lp-similar-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.lp-similar-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem;
+  color: white;
+}
+
+.lp-similar-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.lp-similar-address {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.lp-small-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+}

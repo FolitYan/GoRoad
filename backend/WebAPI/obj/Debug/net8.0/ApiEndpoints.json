@@ -27,6 +27,16 @@
   },
   {
     "ContainingType": "AccountController",
+    "Method": "IsAuthorize",
+    "RelativePath": "Account/isAuthorize",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AccountController",
     "Method": "Registration",
     "RelativePath": "Account/registration",
     "HttpMethod": "POST",
@@ -43,15 +53,15 @@
   },
   {
     "ContainingType": "PostController",
-    "Method": "AccountAuthorization",
-    "RelativePath": "Post/authorization",
+    "Method": "CreatePost",
+    "RelativePath": "Post/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "Aplications.Contracts.AccountRequest",
+        "Name": "post",
+        "Type": "Aplications.Contracts.PostRequestAdd",
         "IsRequired": true
       }
     ],
@@ -59,18 +69,12 @@
   },
   {
     "ContainingType": "PostController",
-    "Method": "Registration",
-    "RelativePath": "Post/registration",
-    "HttpMethod": "POST",
+    "Method": "GetAllPosts",
+    "RelativePath": "Post/getAll",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "Aplications.Contracts.AccountRequest",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

@@ -1,0 +1,98 @@
+/* Основные стили карточки пользователя */
+.user-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 12px;
+    transition: background-color 0.2s;
+  }
+  
+  .user-card:hover {
+    background-color: #f9fafb;
+  }
+  
+  /* Блок с информацией о пользователе */
+  .user-info {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-grow: 1;
+  }
+  
+  /* Аватар пользователя */
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+  
+  .avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+  }
+  
+  .placeholder-icon {
+    width: 20px;
+    height: 20px;
+    color: #9ca3af;
+  }
+  
+  /* Детали пользователя */
+  .user-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .username {
+    font-weight: 500;
+    color: #1f2937;
+  }
+
+  .text{
+    font-weight: 300;
+    color: #1f2937;
+  }
+  
+  .name {
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  /* Кнопка подписки */
+  .follow-button {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    white-space: nowrap;
+  }
+  
+  .follow-button {
+    background-color: #FF6B6B;
+    color: white;
+  }
+  
+  .follow-button:hover {
+    background-color: #e55c5c;
+  }
+  
+  .follow-button.following {
+    background-color: #e5e7eb;
+    color: #4b5563;
+  }
+  
+  .follow-button.following:hover {
+    background-color: #d1d5db;
+  }

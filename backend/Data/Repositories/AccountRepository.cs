@@ -17,7 +17,7 @@ namespace Data.Repositories
             {
                 Id = id,
                 Login = login,
-                Passward = password,
+                Password = password,
                 Role = false
             };
             await _context.AddAsync(account);
@@ -30,20 +30,21 @@ namespace Data.Repositories
                  .Where(x => x.Login == login)
                  .Select(a => new Account
                  {
+                     Id = a.Id,
                      Login = a.Login,
-                     Passward = a.Passward
+                     Password = a.Password
                  })
                  .ToList();
         }
 
-        public List<Account> FindAccount(string login, string paswword)
+        public List<Account> FindAccount(string login, string password)
         {
             return _context.Accounts
-                 .Where(x => x.Passward == paswword && x.Login == login)
+                 .Where(x => x.Password == password && x.Login == login)
                  .Select(a => new Account
                  {
                      Login = a.Login,
-                     Passward = a.Passward
+                     Password = a.Password
                  })
                  .ToList();
         }
@@ -53,8 +54,9 @@ namespace Data.Repositories
             return _context.Accounts
                 .Select(a => new Account
                 {
+                    Id=a.Id,
                     Login = a.Login,
-                    Passward = a.Passward
+                    Password = a.Password
                 })
                  .ToList();
         }

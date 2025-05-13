@@ -357,6 +357,5 @@ D:\backend\WebAPI\obj\Debug\net8.0\WebAPI.genruntimeconfig.cache
 D:\backend\WebAPI\obj\Debug\net8.0\ref\WebAPI.dll
 D:\backend\WebAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\GoRoad\backend\WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\GoRoad\backend\WebAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\GoRoad\backend\WebAPI\bin\Debug\net8.0\Infrastructure.dll
 D:\GoRoad\backend\WebAPI\bin\Debug\net8.0\Infrastructure.pdb

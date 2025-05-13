@@ -1,0 +1,209 @@
+/* Основные стили */
+.wishlist-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  .wishlist-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    color: #2a363b;
+  }
+  
+  /* Контент списка желаний */
+  .wishlist-content {
+    margin-top: 16px;
+  }
+  
+  /* Секция по стране */
+  .country-section {
+    margin-bottom: 40px;
+  }
+  
+  .country-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color: #2a363b;
+  }
+  
+  .country-icon {
+    width: 20px;
+    height: 20px;
+    color: #FF6B6B;
+    margin-right: 8px;
+  }
+  
+  /* Сетка постов */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .posts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .posts-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Карточка поста */
+  .post-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  }
+  
+  /* Изображение поста */
+  .post-image-container {
+    position: relative;
+    height: 200px;
+  }
+  
+  .post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Рейтинг */
+  .post-rating {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .star-icon {
+    width: 16px;
+    height: 16px;
+    color: #F59E0B;
+    margin-right: 4px;
+  }
+  
+  /* Кнопка удаления */
+  .remove-button {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(255,255,255,0.8);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .remove-button:hover {
+    background-color: white;
+  }
+  
+  .remove-button svg {
+    width: 16px;
+    height: 16px;
+    stroke: #333;
+  }
+  
+  /* Детали поста */
+  .post-details {
+    padding: 16px;
+  }
+  
+  .post-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2a363b;
+    transition: color 0.2s;
+  }
+  
+  .post-title:hover {
+    color: #FF6B6B;
+  }
+  
+  .post-location {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 12px;
+  }
+  
+  .location-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    color: #6b7280;
+  }
+  
+  .post-caption {
+    font-size: 14px;
+    color: #4b5563;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Пустой список */
+  .empty-wishlist {
+    text-align: center;
+    padding: 48px 24px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .empty-message {
+    font-size: 18px;
+    color: #4b5563;
+    margin-bottom: 8px;
+  }
+  
+  .empty-hint {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 24px;
+  }
+  
+  .explore-button {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #FF6B6B;
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .explore-button:hover {
+    background-color: #e55c5c;
+  }

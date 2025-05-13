@@ -13,11 +13,15 @@ namespace Data.Configurations
             builder.Property(a => a.Login)
                 .IsRequired();
 
-            builder.Property(a => a.Passward)
+            builder.Property(a => a.Password)
                 .IsRequired();
 
+            // Связь с Post
             builder.HasMany(a => a.Posts)
-                .WithOne(p => p.account);
+                .WithOne(p => p.account)
+                .HasForeignKey(p => p.accountId)
+                .OnDelete(DeleteBehavior.Restrict); // Ограничиваем каскадное удаление
         }
+
     }
 }
