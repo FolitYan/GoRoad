@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation, useNavigate  } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation   } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import Authorization from './Pages/Authorization';
 import Registration from './Pages/Registration';
@@ -20,25 +20,46 @@ import CommentCard from './Pages/Components/CommentCard';
 
 export default function App() {
 
+  const [auth, setAuth] = useState(false);
+  
   const user = {
     avatar: 'https://img.championat.com/i/n/l/1672234512927335998.jpg',
     username: 'traveler'
   };
 
+const checkAuth = async () => {
+  try {
+    const response = await fetch("https://localhost:7190/Account/isAuthorize", {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      setAuth(false);
+      return; 
+    }
+
+    const text = await response.text(); 
+    const result = text ? JSON.parse(text) : {};
+    setAuth(true);
+  } catch (error) {
+    console.error("Ошибка при отправке данных:", error);
+  }
+};
 
 
+ const navigate = useNavigate();
+ const location = useLocation();
 
-  const [auth, setAuth] = useState({
-    rez : true,
-    path : "/"
-  });
-  const navigate = useNavigate(); 
- 
-  useEffect(()=>{
-      navigate(auth.path);
-  }, [auth])
- 
-
+    useEffect(() => {
+      checkAuth();
+      if (auth && (location.pathname === "/authorization" || location.pathname === "/")) {
+        navigate("/home"); 
+      } 
+    }, [auth, navigate]);
 
   const postsData = [
   {
@@ -121,11 +142,12 @@ export default function App() {
   return (
     <div>
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/authorization" element={<Authorization />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/authorization" element={<Authorization setAuth = {setAuth}/>} />
+
         <Route path="/registration" element={<Registration />} />
         <Route path="/wishlist" element={<WishlistPage />} />
-        <Route path="/" element={
+        <Route path="/home" element={
           <>
           <Header user={auth.rez ? user : false} setAuth={setAuth} />
           <Lenta  posts={postsData}/>

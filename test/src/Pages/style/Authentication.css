@@ -147,3 +147,8 @@ html, body {
 .auth-back-link:hover {
   text-decoration: underline;
 }
+
+.msg{
+  color: #FF6B6B;
+  margin-top: 10px;
+}

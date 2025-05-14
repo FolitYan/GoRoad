@@ -1,4 +1,5 @@
 using Aplications.Services;
+using Applications.Services;
 using Data;
 using Data.Repositories;
 using Infrastructure;
@@ -19,10 +20,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>
     {
-        builder.WithOrigins("http://localhost:3000") // явно указываем разрешенный origin
+        builder.SetIsOriginAllowed(_ => true) // –азрешает любые источники
                .AllowAnyHeader()
                .AllowAnyMethod()
-               .AllowCredentials(); // –азрешаем учетные данные
+               .AllowCredentials();
     });
 });
 

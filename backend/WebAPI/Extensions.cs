@@ -9,7 +9,7 @@ namespace WebAPI
     public static class Extensions
     {
         public static void AddApiAuthentication(
-            this IServiceCollection services, 
+            this IServiceCollection services,
             IOptions<JWTOptions> jwtOptions)
         {
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -19,7 +19,7 @@ namespace WebAPI
                     {
                         ValidateIssuer = false,
                         ValidateAudience = false,
-                        ValidateLifetime = false,
+                        ValidateLifetime = true, // Включаем проверку срока действия токена
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.Value.Key))
                     };
@@ -28,12 +28,14 @@ namespace WebAPI
                     {
                         OnMessageReceived = context =>
                         {
-                            context.Token = context.Request.Cookies["chocolate-cookie"];
+                            if (context.Request.Cookies.TryGetValue("chocolate-cookie", out string token))
+                            {
+                                context.Token = token;
+                            }
                             return Task.CompletedTask;
                         }
                     };
                 });
-
 
             services.AddAuthorization();
         }

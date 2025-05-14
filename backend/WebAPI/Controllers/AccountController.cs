@@ -1,9 +1,8 @@
 ﻿using Aplications.Contracts;
 using Aplications.Services;
-using Data;
+using Applications.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 [ApiController]
 [Route("[controller]")]
@@ -16,23 +15,19 @@ public class AccountController : ControllerBase
         _accountServece = accountServece;
     }
 
-    
+
     [HttpPost("authorization")]
     public IActionResult AccountAuthorization([FromBody] AccountRequest request)
     {
-        var (token, rez, account) = _accountServece.Authentication(request.Login, request.Password);
-        if (!rez)
+        var (token, success, account) = _accountServece.Authentication(request.Login, request.Password, HttpContext);
+        if (!success)
         {
-            return Ok(new { Success = false });
-
+            return Ok(new { Success = false, message = token });
         }
-
-        HttpContext.Response.Cookies.Append("chocolate-cookie", token);
 
         return Ok(new AccountAuthorizResponse(account[0].Id, account[0].Login, token, success: true));
     }
 
-    //[AllowAnonymous]
     [HttpPost("registration")]
     public IActionResult Registration([FromBody] AccountRequest request)
     {
@@ -56,15 +51,17 @@ public class AccountController : ControllerBase
     [HttpGet("isAuthorize")]
     public IActionResult IsAuthorize()
     {
-        var userId = User.FindFirst("acountId")?.Value;
-
-            if (string.IsNullOrEmpty(userId))
-            {
-                return Ok(new { message = "Не удалось получить ID пользователя." });
-            }
-
-            return Ok(new { userId });
+       return Ok();
     }
+
+    [Authorize]
+    [HttpGet("logout")]
+    public IActionResult Logout()
+    {
+        _accountServece.LogOut(HttpContext);
+        return Ok();
+    }
+
 
 }
 

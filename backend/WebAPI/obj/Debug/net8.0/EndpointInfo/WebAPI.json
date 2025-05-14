@@ -91,6 +91,18 @@
         }
       }
     },
+    "/Account/logout": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Post/create": {
       "post": {
         "tags": [

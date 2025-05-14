@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\GoRoad\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FF0B3382-2E3E-40EC-A3C3-CF1A1D188993}|Data\\Data.csproj|d:\\goroad\\backend\\data\\repositories\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF0B3382-2E3E-40EC-A3C3-CF1A1D188993}|Data\\Data.csproj|solutionrelative:data\\repositories\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4EDD6A6-167F-45AC-BF8B-3BD5508BF974}|WebAPI\\WebAPI.csproj|d:\\goroad\\backend\\webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EDD6A6-167F-45AC-BF8B-3BD5508BF974}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{65D6914E-BE4D-4C2C-A4D8-8035BC612EC9}|Aplications\\Aplications.csproj|d:\\goroad\\backend\\aplications\\services\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65D6914E-BE4D-4C2C-A4D8-8035BC612EC9}|Aplications\\Aplications.csproj|solutionrelative:aplications\\services\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{65D6914E-BE4D-4C2C-A4D8-8035BC612EC9}|Aplications\\Aplications.csproj|d:\\goroad\\backend\\aplications\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65D6914E-BE4D-4C2C-A4D8-8035BC612EC9}|Aplications\\Aplications.csproj|solutionrelative:aplications\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF0B3382-2E3E-40EC-A3C3-CF1A1D188993}|Data\\Data.csproj|d:\\goroad\\backend\\data\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF0B3382-2E3E-40EC-A3C3-CF1A1D188993}|Data\\Data.csproj|solutionrelative:data\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4EDD6A6-167F-45AC-BF8B-3BD5508BF974}|WebAPI\\WebAPI.csproj|d:\\goroad\\backend\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EDD6A6-167F-45AC-BF8B-3BD5508BF974}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PostRepository.cs",
-              "DocumentMoniker": "D:\\GoRoad\\backend\\Data\\Repositories\\PostRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Repositories\\PostRepository.cs",
-              "ToolTip": "D:\\GoRoad\\backend\\Data\\Repositories\\PostRepository.cs",
-              "RelativeToolTip": "Data\\Repositories\\PostRepository.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAArwBsAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T17:10:41.052Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PostService.cs",
-              "DocumentMoniker": "D:\\GoRoad\\backend\\Aplications\\Services\\PostService.cs",
-              "RelativeDocumentMoniker": "Aplications\\Services\\PostService.cs",
-              "ToolTip": "D:\\GoRoad\\backend\\Aplications\\Services\\PostService.cs",
-              "RelativeToolTip": "Aplications\\Services\\PostService.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAArwBUAAAAYAAAAAAAAAA==",
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "D:\\GoRoad\\backend\\Aplications\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "Aplications\\Services\\AccountService.cs",
+              "ToolTip": "D:\\GoRoad\\backend\\Aplications\\Services\\AccountService.cs",
+              "RelativeToolTip": "Aplications\\Services\\AccountService.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwEAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T17:10:14.917Z",
+              "WhenOpened": "2025-05-14T19:38:38.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Context.cs",
-              "DocumentMoniker": "D:\\GoRoad\\backend\\Data\\Context.cs",
-              "RelativeDocumentMoniker": "Data\\Context.cs",
-              "ToolTip": "D:\\GoRoad\\backend\\Data\\Context.cs",
-              "RelativeToolTip": "Data\\Context.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GoRoad\\backend\\WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Program.cs",
+              "ToolTip": "D:\\GoRoad\\backend\\WebAPI\\Program.cs",
+              "RelativeToolTip": "WebAPI\\Program.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAnwD4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T17:09:54.645Z",
+              "WhenOpened": "2025-05-13T23:06:38.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\GoRoad\\backend\\WebAPI\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\GoRoad\\backend\\WebAPI\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAYwDgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T23:04:18.669Z",
               "EditorCaption": ""
             }
           ]

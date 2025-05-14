@@ -1,7 +1,11 @@
-﻿namespace Infrastructure
+﻿using Microsoft.AspNetCore.Http;
+
+namespace Infrastructure
 {
     public interface IJWTProvider
     {
-        string GenerateToken(Guid Id);
+        string GenerateToken(Guid id, HttpContext context);
+
+        void DeleteToken(HttpContext context);
     }
 }

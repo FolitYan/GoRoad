@@ -37,6 +37,16 @@
   },
   {
     "ContainingType": "AccountController",
+    "Method": "Logout",
+    "RelativePath": "Account/logout",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AccountController",
     "Method": "Registration",
     "RelativePath": "Account/registration",
     "HttpMethod": "POST",

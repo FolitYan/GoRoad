@@ -2,7 +2,10 @@ import { useState } from "react"
 import "./style/Authentication.css"
 import { Link } from "react-router-dom";
 
-export default function Authorization() {
+export default function Authorization({setAuth}) {
+
+  const [msg, setMsg] = useState(""); 
+
   const [accountData, setAccountData] = useState({
     login: "",
     password: "",
@@ -29,6 +32,11 @@ export default function Authorization() {
       });
       
       const result = await response.json(); 
+      if(result.success)
+      {
+       setAuth(true);
+      }
+      setMsg(result.message);
       console.log(result);
     } catch (error) {
       console.error('Ошибка при отправке данных:', error);
@@ -66,9 +74,10 @@ export default function Authorization() {
             <label className="auth-input-label">Введите пароль</label>
           </div>
           <button type="submit" className="auth-submit-btn">Подтвердить</button>
+          <div className = "msg">{msg}</div>
           <div className="auth-links">
             <p className="auth-link-text">Нет аккаунта? <Link to="/registration" className="auth-link">Регистрация</Link></p>
-            <Link to="/home" className="auth-back-link">Назад</Link>
+            <Link to="/" className="auth-back-link">Назад</Link>
           </div>
         </form>
       </div>

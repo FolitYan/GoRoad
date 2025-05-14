@@ -7,10 +7,34 @@ export default function Header(props) {
   const location = useLocation();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
+  const logOut = async (e) =>{
+    e.preventDefault();
+    try {
+      const response = await fetch("https://localhost:7190/Account/logout", {
+        method: "GET",
+        credentials: 'include',
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const text = await response.text();
+      const result = text ? JSON.parse(text) : {};
+      console.log("khbxkasbdk");
+      
+    } catch (error) {
+      console.error("Ошибка при отправке данных:", error);
+    }
+  }
+
   return (
     <header className="header-container">
       <div className="header-inner">
-        <Link to="/" className="header-brand">
+        <Link to="/home" className="header-brand">
           <MapPin className="logo-symbol" />
           <span className="brand-text">GoRoad</span>
         </Link>
@@ -35,7 +59,7 @@ export default function Header(props) {
           </div>
         ) : (
           <nav className="menu-container">
-            <Link to="/" className={`menu-link ${location.pathname === '/' ? 'active' : ''}`}>
+            <Link to="/home" className={`menu-link ${location.pathname === '/home' ? 'active' : ''}`}>
               <Home className="menu-icon" />
             </Link>
             <Link to="/explore" className={`menu-link ${location.pathname === '/explore' ? 'active' : ''}`}>
@@ -54,8 +78,8 @@ export default function Header(props) {
                   alt={props.user.username}
                 />
               </div>
-            </Link>
-            <button className="exit-btn" onClick={() => props.setAuth({ rez: false, path: "/home" })}>
+            </Link >
+            <button className="exit-btn" onClick={logOut}> 
               <LogOut className="menu-icon" />
             </button>
           </nav>

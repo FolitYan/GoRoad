@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate   } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "./style/Authentication.css";
 
@@ -11,6 +12,8 @@ export default function Registration() {
   const [validPassword, setValidPassword] = useState("");
   const [validPasswordError, setValidPasswordError] = useState(false);
   const [passwordError, setPasswordError] = useState(false); 
+  const [msg, setMsg] = useState(""); 
+   const navigate = useNavigate();
 
   const handleSetAccount = (dataTitle, data) => {
     setAccountData({
@@ -37,15 +40,26 @@ export default function Registration() {
     try {
       const response = await fetch("https://localhost:7190/Account/registration", {
         method: "POST",
+        credentials: 'include',
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json",
         },
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const text = await response.text();
+      const result = text ? JSON.parse(text) : {};
+      if(result.success)
+      {
+        navigate("/authorization");
+      }
+      setMsg(result.message);
       console.log(result);
+
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
     }
@@ -56,7 +70,8 @@ export default function Registration() {
     });
     setValidPassword("");
     setPasswordError(false); 
-  };
+};
+
 
   const validData = (e) => {
     if (!validPasswordError && !passwordError) {
@@ -104,9 +119,10 @@ export default function Registration() {
             {validPasswordError && <p className="auth-error-message">Пароли не совпадают.</p>}
           </div>
           <button type="submit" className="auth-submit-btn">Подтвердить</button>
+          <div className = "msg">{msg}</div>
           <div className="auth-links">
             <p className="auth-link-text">Есть аккаунт? <Link to="/authorization" className="auth-link">Войти</Link></p>
-            <Link to="/home" className="auth-back-link">Назад</Link>
+            <Link to="/" className="auth-back-link">Назад</Link>
           </div>
         </form>
       </div>
